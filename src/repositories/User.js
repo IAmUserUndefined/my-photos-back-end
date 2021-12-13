@@ -27,12 +27,13 @@ class UserRepository {
 	}
 
 	async delete(id) {
-		const { password } = await UserModel.findOne({
-			attributes: ["password"],
-			where: { id : id }
-		});
-        
-		return password;
+		await UserModel.destroy(
+			{
+				where: {
+					id: id
+				}
+			}
+		);
 	}
 
 	async findEmailById(id) {
