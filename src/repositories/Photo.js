@@ -3,7 +3,7 @@ const PhotoModel = require("../database/models/Photo");
 
 class PhotoRepository {
 	async create(id, userId, url, originalname, filename){
-		PhotoModel.create({
+		await PhotoModel.create({
 			id: id,
 			userId: userId,
 			url: url,
@@ -14,7 +14,7 @@ class PhotoRepository {
 
 	async getPhotos(userId){
 		const photos = await PhotoModel.findAll({
-			attributes: ["id", "name", "key"],
+			attributes: ["id", "name", "key", "url"],
 			where: {
 				userId: userId
 			}
