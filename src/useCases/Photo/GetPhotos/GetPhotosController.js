@@ -1,4 +1,4 @@
-const { ok } = require("../../../adapters/adapterResponses");
+const { ok } = require("../../../adapters/adapterResponses/adapterResponses");
 const GetPhotosRules = require("./GetPhotosRules");
 
 module.exports = new class GetPhotosController {

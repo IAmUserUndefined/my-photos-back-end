@@ -3,8 +3,8 @@ const { Router } = require("express");
 const authenticateUser = require("../middlewares/authenticateUser");
 const multer = require("../middlewares/multer");
 
-const adaptMiddlewares = require("../adapters/adapterMiddlewares");
-const adaptRouters = require("../adapters/adapterRouters");
+const adaptMiddlewares = require("../adapters/adapterMiddlewares/adapterMiddlewares");
+const adaptRouters = require("../adapters/adapterRouters/adapterRouters");
 
 const AddPhotoController = require("../useCases/Photo/AddPhoto/AddPhotoController");
 const GetPhotosController = require("../useCases/Photo/GetPhotos/GetPhotosController");

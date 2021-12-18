@@ -1,4 +1,4 @@
-const { ok } = require("../../../../adapters/adapterResponses");
+const { ok } = require("../../../../adapters/adapterResponses/adapterResponses");
 const UpdateUserEmailRules = require("./UpdateUserEmailRules");
 
 module.exports = new class UpdateUserEmailController {

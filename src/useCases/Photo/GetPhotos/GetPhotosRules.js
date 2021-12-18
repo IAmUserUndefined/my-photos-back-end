@@ -1,4 +1,4 @@
-const { PhotoRepository } = require("../../../repositories/Photo");
+const { PhotoRepository } = require("../../../repositories/Photo/PhotoRepository/PhotoRepository");
 
 module.exports = class GetPhotoRules {
 

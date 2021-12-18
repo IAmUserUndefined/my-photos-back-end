@@ -1,6 +1,6 @@
 const { MissingParamError, UnauthorizedError } = require("../../../utils/errors/index");
 
-const { UserRepository } = require("../../../repositories/User");
+const { UserRepository } = require("../../../repositories/User/UserRepository/UserRepository");
 const Helper = require("../../../utils/helper/Helper");
 
 module.exports = class UserLoginRules {

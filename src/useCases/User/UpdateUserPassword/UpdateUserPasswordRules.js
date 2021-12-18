@@ -1,7 +1,7 @@
 const { MissingParamError, InvalidParamError } = require("../../../utils/errors/index");
 
 const Helper = require("../../../utils/helper/Helper");
-const { UserRepository } = require("../../../repositories/User");
+const { UserRepository } = require("../../../repositories/User/UserRepository/UserRepository");
 
 module.exports = class UpdateUserPasswordRules {
 

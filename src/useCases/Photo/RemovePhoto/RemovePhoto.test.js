@@ -2,7 +2,7 @@
 
 jest.setTimeout(15000);
 
-const { PhotoTestRepository } = require("../../../repositories/Photo");
+const { PhotoTestRepository } = require("../../../repositories/Photo/PhotoTestRepository/PhotoTestRepository");
 
 const photoTestRepository = new PhotoTestRepository();
 

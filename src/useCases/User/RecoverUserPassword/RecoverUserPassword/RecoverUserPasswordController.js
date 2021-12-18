@@ -1,4 +1,4 @@
-const { ok } = require("../../../../adapters/adapterResponses");
+const { ok } = require("../../../../adapters/adapterResponses/adapterResponses");
 const RecoverUserPasswordRules = require("./RecoverUserPasswordRules");
 
 module.exports = new class RecoverUserPasswordController {

@@ -2,7 +2,7 @@
 
 jest.setTimeout(15000);
 
-const { UserTestRepository } = require("../../../repositories/User");
+const { UserTestRepository } = require("../../../repositories/User/UserTestRepository/UserTestRepository");
 
 const userTestRepository = new UserTestRepository();
 

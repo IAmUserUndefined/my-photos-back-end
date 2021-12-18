@@ -1,4 +1,4 @@
-const { ok } = require("../../../adapters/adapterResponses");
+const { ok } = require("../../../adapters/adapterResponses/adapterResponses");
 const CreateUserRules = require("./CreateUserRules");
 
 module.exports = new class CreateUserController {

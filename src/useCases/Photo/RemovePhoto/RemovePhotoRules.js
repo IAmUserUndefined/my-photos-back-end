@@ -1,5 +1,5 @@
 const Helper = require("../../../utils/helper/Helper");
-const { PhotoRepository } = require("../../../repositories/Photo");
+const { PhotoRepository } = require("../../../repositories/Photo/PhotoRepository/PhotoRepository");
 
 module.exports = class RemovePhotoRules {
 	constructor(){

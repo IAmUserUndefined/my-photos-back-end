@@ -1,4 +1,4 @@
-const { ok } = require("../../../../adapters/adapterResponses");
+const { ok } = require("../../../../adapters/adapterResponses/adapterResponses");
 const SendUserEmailUpdateTokenRules = require("./SendUserEmailUpdateTokenRules");
 
 module.exports = new class SendUserEmailUpdateTokenController {

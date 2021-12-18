@@ -2,7 +2,7 @@ const { MissingParamError, InvalidParamError } = require("../../../utils/errors/
 
 const Helper = require("../../../utils/helper/Helper");
 const Mail = require("../../../providers/Mail/Mail");
-const { UserRepository } = require("../../../repositories/User");
+const { UserRepository } = require("../../../repositories/User/UserRepository/UserRepository");
 
 module.exports = class CreateUserRules {
 

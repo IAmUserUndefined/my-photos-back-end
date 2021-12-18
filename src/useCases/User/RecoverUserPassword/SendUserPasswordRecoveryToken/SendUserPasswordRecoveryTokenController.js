@@ -1,4 +1,4 @@
-const { ok } = require("../../../../adapters/adapterResponses");
+const { ok } = require("../../../../adapters/adapterResponses/adapterResponses");
 const SendUserPasswordRecoveryTokenRules = require("./SendUserPasswordRecoveryTokenRules");
 
 module.exports = new class SendUserPasswordRecoveryTokenController {

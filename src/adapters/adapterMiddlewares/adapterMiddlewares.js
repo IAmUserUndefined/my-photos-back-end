@@ -1,4 +1,4 @@
-const { UnauthorizedError } = require("../utils/errors/index");
+const { UnauthorizedError } = require("../../utils/errors/index");
 
 module.exports = (middleware) => {
 

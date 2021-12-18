@@ -1,4 +1,4 @@
-const { InvalidParamError, MissingParamError, UnauthorizedError } = require("../utils/errors/index");
+const { InvalidParamError, MissingParamError, UnauthorizedError } = require("../../utils/errors/index");
 
 module.exports = (router) => {
 
