@@ -9,14 +9,19 @@ module.exports = class AddPhotoRules {
 		this.repository = new PhotoRepository();
 	}
 
-	async execute(userId, filename, originalname){
+	async execute(userId, filename, originalname, location, key){
 		
-		if(!filename)
+		if(!filename && !location)
 			return new MissingParamError("Houve um problema no downlodad da foto, tente novamente");
 
-		const url = `${Helper.getApiUrlEnvironmentVariable()}/${filename}`;
+		let url = location;
 
-		await this.repository.create(Helper.createId(), userId, url, originalname, filename);
+		if(!location)
+			url = `${Helper.getApiUrlEnvironmentVariable()}/${filename}`;
+
+		const photoKey = filename || key;
+
+		await this.repository.create(Helper.createId(), userId, url, originalname, photoKey);
 
 		return "Foto adicionada com sucesso";
 	}

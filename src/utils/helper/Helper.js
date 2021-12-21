@@ -8,8 +8,44 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const fs = require("fs");
 const path = require("path");
+const aws = require("aws-sdk");
 
 module.exports = class Helper {
+
+	static async removeFileAws(key){
+
+		const s3 =  new aws.S3({
+			accessKeyId: this.getAwsAccessKeyEnvironmentVariable(),
+			secretAccessKey: this.getAwsAccessSecretKeyEnvironmentVariable(),
+			region: this.getAwsDefaultRegionEnvironmentVariable()
+		});
+
+		s3.deleteObject({
+			Bucket: this.getBucketNamenvironmentVariable(),
+			Key: key
+		})
+			.promise();
+	}
+
+	static getAwsAccessKeyEnvironmentVariable(){
+		return process.env.AWS_ACCESS_KEY_ID;
+	}
+
+	static getAwsAccessSecretKeyEnvironmentVariable(){
+		return process.env.AWS_SECRET_KEY_ID;
+	}
+
+	static getAwsDefaultRegionEnvironmentVariable(){
+		return process.env.AWS_DEFAULT_REGION;
+	}
+
+	static getStorageEnvironmentVariable(){
+		return process.env.STORAGE;
+	}
+
+	static getBucketNamenvironmentVariable(){
+		return process.env.BUCKET_NAME;
+	}
 
 	static getAppUrlEnvironmentVariable(){
 		return process.env.APP_URL;

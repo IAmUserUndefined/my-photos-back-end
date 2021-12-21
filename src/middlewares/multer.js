@@ -1,19 +1,41 @@
 const { InvalidParamError } = require("../utils/errors/index");
 
+const Helper = require("../utils/helper/Helper");
+
 const path = require("path");
 const multer = require("multer");
+const aws = require("aws-sdk");
+const multerS3 = require("multer-s3");
 
-const multerConfig = {
 
-	dest: path.resolve(__dirname, "..", "utils", "tmp"),
-
-	storage: multer.diskStorage({
+const storageTypes = {
+	local: multer.diskStorage({
 
 		destination: (req, file, callback) => callback(null, "src/utils/tmp"),
 
 		filename: (req, file, callback) => callback(null, `${Date.now()}-${file.originalname}`)
         
 	}),
+
+	s3: multerS3({
+		s3: new aws.S3({
+			accessKeyId: Helper.getAwsAccessKeyEnvironmentVariable(),
+			secretAccessKey: Helper.getAwsAccessSecretKeyEnvironmentVariable(),
+			region: Helper.getAwsDefaultRegionEnvironmentVariable()
+		}),
+		bucket: Helper.getBucketNamenvironmentVariable(),
+		contentType: multerS3.AUTO_CONTENT_TYPE,
+		acl: "public-read",
+		key: (req, file, callback) =>  callback(null, `${Date.now()}-${file.originalname}`)
+	})
+
+};
+
+const multerConfig = {
+
+	dest: path.resolve(__dirname, "..", "utils", "tmp"),
+
+	storage: storageTypes[Helper.getStorageEnvironmentVariable()],
 
 	limits: { fileSize: 1024 * 1024 },
 

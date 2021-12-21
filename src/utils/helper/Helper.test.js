@@ -18,6 +18,11 @@ describe("Test of environment variable get", () => {
 		const databasePort = Helper.getDatabasePortEnvironmentVariable();
 		const databaseName = Helper.getDatabaseNameEnvironmentVariable();
 		const host = Helper.getHostEnvironmentVariable();
+		const storage = Helper.getStorageEnvironmentVariable();
+		const bucketName = Helper.getBucketNamenvironmentVariable();
+		const accessKey = Helper.getAwsAccessKeyEnvironmentVariable();
+		const secretKey = Helper.getSecretKeyJwtEnvironmentVariable();
+		const region = Helper.getAwsDefaultRegionEnvironmentVariable();
 
 		expect(appUrl).not.toBeUndefined();
 		expect(email).not.toBeUndefined();
@@ -29,6 +34,11 @@ describe("Test of environment variable get", () => {
 		expect(databasePort).not.toBeUndefined();
 		expect(databaseName).not.toBeUndefined();
 		expect(host).not.toBeUndefined();
+		expect(storage).not.toBeUndefined();
+		expect(bucketName).not.toBeUndefined();
+		expect(accessKey).not.toBeUndefined();
+		expect(secretKey).not.toBeUndefined();
+		expect(region).not.toBeUndefined();
 	});
 });
 

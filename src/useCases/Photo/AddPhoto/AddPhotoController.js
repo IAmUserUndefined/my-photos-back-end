@@ -6,11 +6,11 @@ module.exports = new class AddPhotoController {
 		
 		const userId = request.userId;
 
-		const { filename, originalname } = request.file;
+		const { filename, originalname, location, key } = request.file;
 
 		const addPhotoRules = new AddPhotoRules();
 
-		const response = await addPhotoRules.execute(userId, filename, originalname);
+		const response = await addPhotoRules.execute(userId, filename, originalname, location, key);
 
 		return ok(response);
         

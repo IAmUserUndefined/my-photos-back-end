@@ -9,7 +9,11 @@ module.exports = class RemovePhotoRules {
 	async execute(photoId, key, userId){
 		await this.repository.remove(photoId, userId);
 
-		Helper.deleteFile(key);
+		if(Helper.getStorageEnvironmentVariable() === "s3"){ 
+			Helper.removeFileAws(key);
+		}else{
+			Helper.deleteFile(key);
+		}
 
 		return "Foto excluída com sucesso";
 	}
