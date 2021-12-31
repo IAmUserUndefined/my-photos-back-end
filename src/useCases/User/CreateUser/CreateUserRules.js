@@ -37,6 +37,6 @@ module.exports = class CreateUserRules {
 			token: token
 		});
 
-		return "Usuário cadastrado com sucesso, verique seu email";
+		return "Usuário cadastrado com sucesso, verique seu email, não esqueça de verificar sua caixa de spam";
 	}
 };

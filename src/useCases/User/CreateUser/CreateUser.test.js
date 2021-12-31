@@ -118,7 +118,7 @@ describe("Create User", () => {
 			});
 
 		expect(response.statusCode).toBe(200);
-		expect(response.body.response).toBe("Usuário cadastrado com sucesso, verique seu email");
+		expect(response.body.response).toBe("Usuário cadastrado com sucesso, verique seu email, não esqueça de verificar sua caixa de spam");
 
 	});
 });

@@ -5,9 +5,9 @@
   "main": "src/server.js",
   "author": "João Pedro",
   "scripts": {
-    "pretest": "eslint --fix . && sequelize db:migrate dotenv_config_path=.env.test",
+    "pretest": "eslint --fix . && sequelize db:migrate --env dotenv_config_path=.env.test",
     "test": "jest --detectOpenHandles",
-    "posttest": "sequelize db:migrate:undo:all dotenv_config_path=.env.test",
+    "posttest": "sequelize db:migrate:undo:all --env dotenv_config_path=.env.test",
     "dev": "nodemon src/server.js",
     "prestart": "sequelize db:migrate",
     "start": "node src/server.js"

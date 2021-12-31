@@ -55,6 +55,6 @@ describe("Send recovery password link", () => {
 			});
 
 		expect(response.statusCode).toBe(200);
-		expect(response.body.response).toBe("O link de recuperação de senha foi enviado para seu email, ele é válido por alguns minutos");
+		expect(response.body.response).toBe("O link de recuperação de senha foi enviado para seu email, ele é válido por alguns minutos, não esqueça de verificar sua caixa de spam");
 	});
 });
