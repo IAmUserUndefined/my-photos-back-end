@@ -8,7 +8,7 @@ class PhotoRepository {
 			url: url,
 			name: originalname,
 			key: filename
-		});
+		}).catch(err => console.log(err));
 	}
 
 	async getPhotos(userId){
@@ -17,7 +17,7 @@ class PhotoRepository {
 			where: {
 				userId: userId
 			}
-		});
+		}).catch(err => console.log(err));
 
 		return photos;
 	}
@@ -31,7 +31,7 @@ class PhotoRepository {
 					{ userId: userId}
 				]
 			}
-		});
+		}).catch(err => console.log(err));
 	}
 }
 module.exports = {
