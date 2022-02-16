@@ -7,7 +7,6 @@ const multer = require("multer");
 const aws = require("aws-sdk");
 const multerS3 = require("multer-s3");
 
-
 const storageTypes = {
 	local: multer.diskStorage({
 
@@ -37,19 +36,25 @@ const multerConfig = {
 
 	storage: storageTypes[Helper.getStorageEnvironmentVariable()],
 
-	limits: { fileSize: 1024 * 1024 },
+	limits: { fileSize: 1024 * 1024 * 100 },
 
 	fileFilter: (req, file, callback) => {
       
 		const allowedTypes = [
 			"image/jpeg",
-			"image/png"
+			"image/png",
+			"video/mp3",
+			"video/mp4"
 		];
 
 		if (allowedTypes.includes(file.mimetype)) 
 			return callback(null, true);
 
-		callback(new InvalidParamError("Tipo de Arquivo inválido, a imagem precisa estar em formato JPEG ou PNG"));
+		callback(
+			new InvalidParamError(
+				"Tipo de Arquivo inválido, o arquivo precisa estar em formato JPEG, PNG, MP3 ou MP4 e precisa ter menos de 100 mb"
+			)
+		);
 
 	}
 };
