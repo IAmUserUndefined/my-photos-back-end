@@ -43,8 +43,6 @@ const multerConfig = {
 		const allowedTypes = [
 			"image/jpeg",
 			"image/png",
-			"video/mp3",
-			"video/mp4"
 		];
 
 		if (allowedTypes.includes(file.mimetype)) 
